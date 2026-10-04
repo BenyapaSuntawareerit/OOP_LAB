@@ -14,4 +14,8 @@ public class SportsClub extends Club {
     public void changeName(String newName) {
         
     }
+    @Override
+    public int getNumMember() {
+        return super.getNumMember();
+    }
 }

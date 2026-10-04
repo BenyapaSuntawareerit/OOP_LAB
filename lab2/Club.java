@@ -30,4 +30,8 @@ public class Club {
     public void advertise() {
         System.out.println("Please join club: " + clubName);
     }
+
+    public int getNumMember() {
+        return numMember;
+    }
 }
