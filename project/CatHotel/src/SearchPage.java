@@ -40,10 +40,6 @@ public class SearchPage extends JFrame implements ActionListener {
         results = new JTextArea();
         results.setEditable(false);
 
-        add(title, BorderLayout.NORTH);
-        add(form, BorderLayout.CENTER);
-        add(new JScrollPane(results), BorderLayout.SOUTH);
-
         JPanel panel = new JPanel(new BorderLayout());
         panel.add(form, BorderLayout.NORTH);
         panel.add(new JScrollPane(results), BorderLayout.CENTER);
@@ -58,7 +54,7 @@ public class SearchPage extends JFrame implements ActionListener {
         if (!(b instanceof CatBooking)) return false;
 
         CatBooking c = (CatBooking) b;
-        key = key.toLowerCase();
+        key = key.toLowerCase().trim();
 
         switch (type) {
             case "Cat name":
@@ -66,8 +62,8 @@ public class SearchPage extends JFrame implements ActionListener {
             case "Phone":
                 return c.getPhone().contains(key);
             case "Room type":
-                return (key.equals("standard") && b instanceof StandardRoom)
-                    || (key.equals("vip") && b instanceof VipRoom);
+                return (b instanceof StandardRoom && key.equalsIgnoreCase("Standard"))
+                    || (b instanceof VipRoom && key.equalsIgnoreCase("VIP"));
             case "Room size":
                 return b instanceof StandardRoom
                     && ((StandardRoom) b).getRoomSize().equalsIgnoreCase(key);

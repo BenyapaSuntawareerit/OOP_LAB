@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Database {
-    private static final List<Bookable> bookings = new ArrayList<>();
+    private static final ArrayList<Bookable> bookings = new ArrayList<>();
 
     public static void addBooking(Bookable booking) {
         bookings.add(booking);
