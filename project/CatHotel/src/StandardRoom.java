@@ -15,7 +15,16 @@ public class StandardRoom extends CatBooking {
 
     @Override
     public double calculatePrice() {
-        return PRICE_PER_DAY * days;
+        switch (roomSize) {
+            case "S":
+                return 300 * days;
+            case "M":
+                return 400 * days;
+            case "L":
+                return 450 * days;
+            default:
+                throw new IllegalArgumentException("Invalid room size.");
+        }
     }
 
     @Override

@@ -89,10 +89,20 @@ public class SearchPage extends JFrame implements ActionListener {
         }
 
         String type = (String) searchBy.getSelectedItem();
+
         if (type.equals("Room type")
                 && !key.equalsIgnoreCase("Standard")
                 && !key.equalsIgnoreCase("VIP")) {
             JOptionPane.showMessageDialog(this, "Enter Standard or VIP.");
+            return;
+        }
+        // Validate room size
+        if (type.equals("Room size")
+                && !key.equalsIgnoreCase("S")
+                && !key.equalsIgnoreCase("M")
+                && !key.equalsIgnoreCase("L")) {
+            JOptionPane.showMessageDialog(
+                    this, "Enter S, M or L.");
             return;
         }
 
