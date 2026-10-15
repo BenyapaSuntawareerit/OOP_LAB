@@ -15,9 +15,7 @@ public class TriangleManagerTest {
         Triangle largest = manager.findTriangleWithLargestPerimeter();
 
         System.out.println("Largest Perimeter: " + largest.getPerimeter());
-
         System.out.println("Longest Side: " + largest.getLongestSideLength());
-
         System.out.println("Largest Angle: " + largest.getLargestAngle());
 
         try {
